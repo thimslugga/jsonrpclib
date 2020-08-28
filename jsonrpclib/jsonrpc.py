@@ -140,7 +140,7 @@ class TransportMixIn(object):
         connection.putheader("Content-Length", str(len(request_body)))
         connection.endheaders()
         if request_body:
-            connection.send(request_body)
+            connection.send(request_body.encode())
 
     def getparser(self):
         target = JSONTarget()
